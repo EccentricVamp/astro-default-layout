@@ -1,8 +1,8 @@
 {
   "name": "astro-default-layout",
   "version": "1.0.0",
-  "description": "Unofficial plugin for Astro that sets default layouts for Markdown pages",
-  "main": "index.js",
+  "description": "Astro plugin for setting default Markdown layouts",
+  "exports": "./index.js",
   "type": "module",
   "author": "EccentricVamp",
   "license": "MIT",
