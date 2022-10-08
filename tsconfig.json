@@ -1,13 +1,9 @@
 {
-    "files": [
-        "index.ts"
-    ],
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "node",
         "isolatedModules": true,
-        "noEmit": true,
         "forceConsistentCasingInFileNames": true,
         "esModuleInterop": true,
         "strict": true,
