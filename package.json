@@ -4,6 +4,7 @@
   "description": "Astro plugin for setting default Markdown layouts",
   "exports": "./index.js",
   "type": "module",
+  "packageManager": "pnpm@7.9.4",
   "author": "EccentricVamp",
   "license": "MIT",
   "devDependencies": {
