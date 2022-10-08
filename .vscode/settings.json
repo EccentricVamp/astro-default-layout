@@ -1,0 +1,10 @@
+{
+    "[json][jsonc][typescript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "node_modules": true,
+    }
+}
