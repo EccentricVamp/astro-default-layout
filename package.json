@@ -5,10 +5,14 @@
   "exports": "./index.js",
   "type": "module",
   "packageManager": "pnpm@7.9.4",
+  "scripts": {
+    "build": "tsc"
+  },
   "author": "EccentricVamp",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.8.3",
+    "typescript": "^4.8.4",
     "vfile": "^5.3.5"
   }
 }
