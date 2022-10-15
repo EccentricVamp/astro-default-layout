@@ -10,10 +10,6 @@ export type MarkdownAstroData = {
     frontmatter: Frontmatter
 }
 
-const pagesDir = "src/pages";
-const layoutDir = "src/layouts";
-const defaultLayout = "MainLayout";
-
 const pascalCache: Record<string, string> = {};
 function toPascalCase(str: string) {
     pascalCache[str] =
@@ -32,21 +28,22 @@ function toPascalCase(str: string) {
 
 const layouts = new Set;
 const notLayouts = new Set;
-export function defaultLayoutPlugin() {
-    return function (_tree: any[], file: VFile) {
-        const filePath = file.history[0].replace(/\/[^\/]+$/, "");
-        const currentDir = join(file.cwd, pagesDir);
+export function defaultLayout() {
+    return function (_tree: any, file: any) {
+        const vfile = file as VFile;
+        const filePath = vfile.history[0].replace(/\/[^\/]+$/, "");
+        const currentDir = join(vfile.cwd, "src/pages");
         const relativePath = filePath.slice(currentDir.length + 1);
         const directories = relativePath ? relativePath.split("/").reverse() : [];
 
-        let layout = defaultLayout;
+        let layout = "MainLayout";
         for (const directory in directories) {
             const directoryLayout = toPascalCase(directory);
             if (
                 layouts.has(directoryLayout) ||
                 (
                     !notLayouts.has(directoryLayout) &&
-                    existsSync(join(layoutDir, directoryLayout + ".astro"))
+                    existsSync(join("src/layouts", directoryLayout + ".astro"))
                 )
             ) {
                 layouts.add(directoryLayout);
@@ -62,6 +59,6 @@ export function defaultLayoutPlugin() {
             ascend += "../";
         }
 
-        (file.data.astro as MarkdownAstroData).frontmatter.layout = `${ascend}layouts/${layout}.astro`;
+        (vfile.data.astro as MarkdownAstroData).frontmatter.layout = `${ascend}layouts/${layout}.astro`;
     }
 }
