@@ -54,11 +54,8 @@ export function defaultLayout() {
             }
         }
 
-        let ascend = "";
-        for (let i = 0; i < directories.length; i++) {
-            ascend += "../";
-        }
+        const layoutPath = join(vfile.cwd, "src/layouts", layout + ".astro");
 
-        (vfile.data.astro as MarkdownAstroData).frontmatter.layout = `${ascend}layouts/${layout}.astro`;
+        (vfile.data.astro as MarkdownAstroData).frontmatter.layout = layoutPath;
     }
 }
