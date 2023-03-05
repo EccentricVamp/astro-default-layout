@@ -1,6 +1,6 @@
 # Astro Default Layout
 
-An unofficial plugin for [Astro](astro.build) that sets directory-based default layouts for Markdown pages.
+An unofficial plugin for [Astro](https://astro.build) that sets directory-based default layouts for Markdown pages.
 
 Based on a [comment](https://github.com/withastro/astro/issues/397#issuecomment-1264718819) by [mrinestra](https://github.com/mrienstra).
 
